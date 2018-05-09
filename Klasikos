@@ -1,0 +1,159 @@
+ int main() 
+{
+int i,dny[7],min,max,u, help[7];
+float soucet=0,prumer=0;
+printf("Dny v tydnu: \n");
+printf("Pondeli: ");
+scanf("%d",&dny[0]);
+printf("Utery: ");
+scanf("%d",&dny[1]);
+printf("Streda: ");
+scanf("%d",&dny[2]);
+printf("Ctvrtek: ");
+scanf("%d",&dny[3]);
+printf("Patek: ");
+scanf("%d",&dny[4]);
+printf("Sobota: ");
+scanf("%d",&dny[5]);
+printf("Nedele: ");
+scanf("%d",&dny[6]);
+printf("================================");
+//min=0;
+//max=0;
+for(i=0;i<7;i++)
+{
+
+    
+    
+    
+    for(i=0;i<7;i++)
+    {
+        
+        
+        if (i==0) 
+        {
+            min = dny[i];
+            max=dny[i];    
+        }
+        else {
+            if(dny[i]<min)
+            {
+                min=dny[i];
+            }
+            if(dny[i]>max)
+            {
+                max=dny[i];
+            }
+        }
+    
+    }
+
+for(i=0;i<7;i++)
+{
+    u=0;
+    if(i==0)
+    {
+        printf ("\n");
+        printf("\nPo:");
+    }
+    if(i==1)
+    {
+        printf("Ut:");
+    }
+    if(i==2)
+    {
+        printf("St:");
+    }
+    if(i==3)
+    {
+        printf("Ct:");
+    }
+    if(i==4)
+    {
+        printf("Pa:");
+    }
+    if(i==5)
+    {
+        printf("So:");
+    }
+    if(i==6)
+    {
+        printf("Ne:");
+    }
+
+
+    if(dny[i]<=0)
+{
+    u=0;
+
+    if(dny[i]==0)	printf(" ");
+    if(dny[i]>-10) printf(" ");
+    while(u!=min-dny[i])
+    {
+        if(dny[i]!=min)
+        {
+        printf(" ");
+        }
+         u=u-1; 
+    }
+    u=0;
+    printf("%d ",dny[i]);
+    while(u!=dny[i])
+    {
+        printf("-");
+        u=u-1;
+    }
+    printf("|");
+    printf("\n");
+}
+    if(dny[i]>0)
+    {
+        if(dny[i]!=min)
+        {
+
+            if(min<0) printf(" "); 
+        }
+        u=0;
+        if (min<0)
+        {
+            while(u!=min-3)   
+            {
+            printf(" ");
+            u=u-1;
+            
+            }
+        }
+            u=0;
+        printf("|");
+        while(u!=dny[i])
+        {
+         printf("+");
+         u=u+1;
+        }
+        printf(" %d",dny[i]);
+        printf("\n"); 
+    }
+    
+} 
+          
+    
+
+printf("================================\n");
+
+
+printf("\n================================\n");
+for (i=0;i<7;i++) {
+    soucet=soucet+dny[i];   
+}
+
+prumer=soucet/7;
+
+printf("Minimalni teplota: %d\n",min);
+//min==dny[7];
+printf("Prumerna teplota: %f \n",prumer);
+printf("Maximalni teplota: %d (%d)",max);
+
+return 0;
+
+}
+}
